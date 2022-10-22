@@ -1,7 +1,9 @@
-import styles from "./Home.module.css";
+import styles from "./Home.module.css"
 import iconMenu from "../../assets/img/menu.svg"
 import iconAdd from "../../assets/img/adicionar.svg"
 import iconfile from "../../assets/img/dados.svg"
+import { MascaraCPF } from "../../components/MascaraCPF/MascaraCPF"
+import { MascaraPLACA } from "../../components/MascaraPLACA/MascaraPLACA"
 
 export const Home = () => {
   return (
@@ -29,11 +31,11 @@ export const Home = () => {
           <div>
             <form>
               <div className={styles.camposPesquisa}>
-                <input placeholder="Digite o CPF do cliente - ex.: 000.000.000-00" />
+                <MascaraCPF/>
                 <button>Buscar CPF</button>
               </div>
               <div className={styles.camposPesquisa}>
-                <input placeholder="Digite o placa do veículo - ex.: ABC1234" />
+                <MascaraPLACA/>
                 <button>Buscar veículo</button>
               </div>
             </form>
