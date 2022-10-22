@@ -1,0 +1,76 @@
+* {
+    border: none;
+}
+.mainHome, .busca form{
+    display: flex;
+    justify-content: center;
+}
+.cardPrincipal {
+    width: 70%;
+    margin: 5% 5% 0 5%;
+}
+.busca form{
+    flex-direction: column;
+}
+.relatorios {
+    width: 30%;
+    margin: 5% 5% 0 0;
+    border: 1px solid blue;
+}
+.acao, .busca{
+    border: 1px solid red;
+}
+.acao h3, .busca h3, .relatorios h3 {
+    font-family: inter;
+}
+.acao button{
+    width: 150px;
+    height: 150px;
+    font-size: 16px;
+    border-radius: 16px;
+    margin-right: 20px;
+    cursor: pointer;
+    color: #6FC2C6;
+    background: white;
+}
+.acao button:hover {
+    color: white;
+    background: #6FC2C6;
+}
+.busca input {
+    width: 300px;
+    height: 30px;
+    margin: 0 20px 10px 0;
+    border-radius: 8px;
+}
+.busca button {
+    width: 150px;
+    height: 30px;
+    border-radius: 8px;
+    color: #F06000;
+    border: 2px solid #F06000;
+    background: white;
+    cursor: pointer;
+}
+.busca button:hover {
+    border: none;
+    color: white;
+    background: #F06000;
+}
+.camposPesquisa {
+    display: flex;
+    flex-direction: row;
+}
+.caixaDados {
+    /* height: 100%; */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid blue;
+}
+.quantiServico, .valorFaturado {
+    width: 90%;
+    border-radius: 16px;
+    border: 1px solid blue;
+}
