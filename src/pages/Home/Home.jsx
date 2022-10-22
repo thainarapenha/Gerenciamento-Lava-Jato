@@ -1,11 +1,15 @@
 import styles from "./Home.module.css";
+import iconMenu from "../../assets/img/menu.svg"
+import iconAdd from "../../assets/img/adicionar.svg"
+import iconfile from "../../assets/img/dados.svg"
 
 export const Home = () => {
   return (
     <main className={styles.mainHome}>
       <section className={styles.cardPrincipal}>
         <div className={styles.acao}>
-          <div>
+          <div className={styles.caixaTitulo}>
+            <img src={iconAdd} />
             <h3>Meu espaço</h3>
           </div>
 
@@ -17,37 +21,42 @@ export const Home = () => {
         </div>
 
         <div className={styles.busca}>
-          <div>
+          <div className={styles.caixaTitulo}>
+            <img src={iconMenu} />
             <h3>Buscar</h3>
           </div>
+
           <div>
             <form>
               <div className={styles.camposPesquisa}>
-                <input placeholder="ex.: 000.000.000-00" />
+                <input placeholder="Digite o CPF do cliente - ex.: 000.000.000-00" />
                 <button>Buscar CPF</button>
               </div>
               <div className={styles.camposPesquisa}>
-                <input placeholder="Digite o placa do veículo do cliente" />
+                <input placeholder="Digite o placa do veículo - ex.: ABC1234" />
                 <button>Buscar veículo</button>
               </div>
             </form>
           </div>
         </div>
+
+        {/* lembrar de colocar uma div para retorno de pesquisa do banco */}
       </section>
 
       <section className={styles.relatorios}>
-        <div>
+        <div className={styles.caixaTitulo}>
+          <img src={iconfile} />
           <h3>Dashboard</h3>
         </div>
 
         <div className={styles.caixaDados}>
           <div className={styles.quantiServico}>
             <p>Quantidade de serviços do mês</p>
-            <p>100</p>
+            <span>100</span>
           </div>
           <div className={styles.valorFaturado}>
-            <p>valor faturado no mês</p>
-            <p>100</p>
+            <p>Valor faturado no mês</p>
+            <span>100</span>
           </div>
         </div>
       </section>

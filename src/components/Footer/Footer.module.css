@@ -1,0 +1,11 @@
+.mainFooter {
+  bottom: 0;
+  position: fixed;
+  width: 100%;
+  text-align: center;
+  background: white;
+}
+
+.mainFooter p {
+  font-size: 14px;
+}

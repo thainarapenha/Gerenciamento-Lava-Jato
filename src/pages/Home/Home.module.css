@@ -1,30 +1,37 @@
 * {
     border: none;
+    font-family: inter;
 }
 .mainHome, .busca form{
     display: flex;
     justify-content: center;
 }
+.mainHome {
+    height: 80vh;
+}
+.caixaTitulo {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+.caixaTitulo img {
+    padding-right: 10px;
+}
 .cardPrincipal {
     width: 70%;
-    margin: 5% 5% 0 5%;
+    margin: 5% 0 0 5%;
 }
 .busca form{
     flex-direction: column;
 }
-.relatorios {
-    width: 30%;
-    margin: 5% 5% 0 0;
-    border: 1px solid blue;
+.acao {
+    margin-bottom: 50px;
 }
-.acao, .busca{
-    border: 1px solid red;
-}
-.acao h3, .busca h3, .relatorios h3 {
-    font-family: inter;
+.acao h3, .busca h3 {
+    color: black;
 }
 .acao button{
-    width: 150px;
+    width: 350px;
     height: 150px;
     font-size: 16px;
     border-radius: 16px;
@@ -32,16 +39,18 @@
     cursor: pointer;
     color: #6FC2C6;
     background: white;
+    border: 1px solid #6FC2C6;
 }
 .acao button:hover {
     color: white;
     background: #6FC2C6;
 }
 .busca input {
-    width: 300px;
+    width: 500px;
     height: 30px;
     margin: 0 20px 10px 0;
     border-radius: 8px;
+    border: 1px solid #6FC2C6;
 }
 .busca button {
     width: 150px;
@@ -61,16 +70,30 @@
     display: flex;
     flex-direction: row;
 }
+.relatorios {
+    width: 30%;
+    margin: 5% 5% 0 0;
+}
 .caixaDados {
-    /* height: 100%; */
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-direction: column;
-    border: 1px solid blue;
+    height: 300px;
+    width: 90%;
 }
 .quantiServico, .valorFaturado {
-    width: 90%;
+    height: 100px;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
     border-radius: 16px;
-    border: 1px solid blue;
+}
+.quantiServico span, .valorFaturado span {
+    font-size: 24px;
+}
+.quantiServico {
+    color: white;
+    margin-bottom: 20px;
+    background: #4A8184;
+}
+.valorFaturado {
+    color: #6FC2C6;
+    border: 1px solid #4A8184;
 }
