@@ -40,6 +40,18 @@
   border: 1px solid #6FC2C6;
 }
 
+/* #rua,
+#bairro,
+#cidade,
+#uf {
+  border: 1px solid red;
+} */
+
+.inputRUA input{
+  border: 1px solid red;
+
+}
+
 .caixaZERO,
 .caixaUM,
 .caixaDOIS,

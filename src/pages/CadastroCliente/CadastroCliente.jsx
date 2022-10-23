@@ -2,11 +2,54 @@ import iconCar from "../../assets/img/car.svg"
 import styles from "./CadastroCliente.module.css";
 import iconUserInsert from "../../assets/img/userInsert.svg"
 import { MascaraCPF } from "../../components/MascaraCPF/MascaraCPF";
-import { MascaraCEP } from "../../components/MascaraCEP/MascaraCEP";
+// import { MascaraCEP } from "../../components/MascaraCEP/MascaraCEP";
 import { MascaraPLACA } from "../../components/MascaraPLACA/MascaraPLACA"
 import { MascaraCelular } from "../../components/MascaraCelular/MascaraCelular";
+import { useState } from "react";
 
 export const CadastroCliente = () => {
+  const [dados, setDados] = useState({
+    cep: "",
+    endereco: { localidade: "", uf: "", logradouro: "" },
+  });
+
+  async function buscaCep(event) {
+    console.log(event.target.value);
+    try {
+      const res = await fetch(
+        `https://viacep.com.br/ws/${event.target.value}/json/`
+      );
+
+      const data = await res.json();
+      const { localidade, uf, logradouro, bairro } = data;
+
+      if (data.erro) {
+        toastAlertErro("CEP informado não foi encontrado");
+        return;
+      }
+
+      setDados({
+        ...dados,
+        endereco: {
+          localidade,
+          uf,
+          logradouro,
+          bairro,
+        },
+      });
+    } catch (erro) {
+      toastAlertErro("Insira um CEP válido");
+    }
+  }
+
+  function verificaInputsNumericos(event) {
+    const numeros = event.target.value.replace(/[^\d\s.-]/gi, "");
+
+    if (event.target.id === "cep") {
+      setDados({ ...dados, cep: numeros });
+    }
+  }
+
   return (
     <main className={styles.mainCadastroCliente}>
       <section className={styles.campoForm}>
@@ -29,24 +72,55 @@ export const CadastroCliente = () => {
 
             <div id={styles.campoCEP}>
               <label>CEP:</label>
-              <MascaraCEP />
+              <input
+                placeholder="CEP"
+                type="text"
+                id="cep"
+                onBlur={buscaCep}
+                required
+                value={dados.cep}
+                onChange={verificaInputsNumericos} />
             </div>
           </div>
 
           <div className={styles.caixaDOIS}>
             <label>Rua:</label>
-            <input name="name" placeholder="Rua" />
+            <input 
+              placeholder="Rua"
+              type="text"
+              id="rua"
+              required
+              readOnly
+              value={dados.endereco.logradouro}/>
+
             <label>Bairro:</label>
-            <input name="name" placeholder="Bairro" />
+            <input
+              placeholder="Bairro"
+              type="text"
+              id="bairro"
+              required
+              readOnly
+              value={dados.endereco.bairro} />
           </div>
 
           <div className={styles.caixaTRES}>
             <label>Número:</label>
             <input name="name" placeholder="Número" />
             <label>Cidade:</label>
-            <input name="name" placeholder="Cidade" />
+            <input placeholder="Cidade"
+                type="text"
+                id="cidade"
+                required
+                readOnly
+                value={dados.endereco.localidade}/>
+                
             <label>UF:</label>
-            <input name="name" placeholder="UF" />
+            <input placeholder="UF"
+                type="text"
+                id="uf"
+                required
+                readOnly
+                value={dados.endereco.uf}/>
           </div>
 
           <div className={styles.caixaQUATRO}>
@@ -81,7 +155,7 @@ export const CadastroCliente = () => {
         </form>
       </section>
 
-      <div className={styles.areaBotao}>
+      <div className={styles.areaBotao} type="submit">
         <button><strong>Cadastrar cliente</strong></button>
       </div>
     </main>
