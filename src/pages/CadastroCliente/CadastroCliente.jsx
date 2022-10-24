@@ -85,13 +85,13 @@ export const CadastroCliente = () => {
 
           <div className={styles.caixaDOIS}>
             <label>Rua:</label>
-            <input 
+            <input
               placeholder="Rua"
               type="text"
               id="rua"
               required
               readOnly
-              value={dados.endereco.logradouro}/>
+              value={dados.endereco.logradouro} />
 
             <label>Bairro:</label>
             <input
@@ -108,19 +108,19 @@ export const CadastroCliente = () => {
             <input name="name" placeholder="Número" />
             <label>Cidade:</label>
             <input placeholder="Cidade"
-                type="text"
-                id="cidade"
-                required
-                readOnly
-                value={dados.endereco.localidade}/>
-                
+              type="text"
+              id="cidade"
+              required
+              readOnly
+              value={dados.endereco.localidade} />
+
             <label>UF:</label>
             <input placeholder="UF"
-                type="text"
-                id="uf"
-                required
-                readOnly
-                value={dados.endereco.uf}/>
+              type="text"
+              id="uf"
+              required
+              readOnly
+              value={dados.endereco.uf} />
           </div>
 
           <div className={styles.caixaQUATRO}>

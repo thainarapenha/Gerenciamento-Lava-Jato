@@ -5,7 +5,11 @@ import iconfile from "../../assets/img/dados.svg"
 import { MascaraCPF } from "../../components/MascaraCPF/MascaraCPF"
 import { MascaraPLACA } from "../../components/MascaraPLACA/MascaraPLACA"
 
+import { useNavigate } from "react-router-dom";
+
 export const Home = () => {
+  const navigate = useNavigate();
+
   return (
     <main className={styles.mainHome}>
       <section className={styles.cardPrincipal}>
@@ -16,8 +20,9 @@ export const Home = () => {
           </div>
 
           <div>
-            <button><strong>Novo serviço</strong></button>
-            <button><strong>Novo cliente</strong></button>
+            <button onClick={() => navigate("/servico")}><strong>Novo serviço</strong>
+            </button>
+            <button onClick={() => navigate("/cadastro")}><strong>Novo cliente</strong></button>
           </div>
 
         </div>
