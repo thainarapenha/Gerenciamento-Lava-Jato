@@ -8,7 +8,7 @@ import { MascaraPLACA } from "../../components/MascaraPLACA/MascaraPLACA"
 import { useNavigate } from "react-router-dom";
 
 export const Home = () => {
-  const navigate = useNavigate();
+  const navigate = useNavigate();  
 
   return (
     <main className={styles.mainHome}>
@@ -36,7 +36,7 @@ export const Home = () => {
           <div>
             <form>
               <div className={styles.camposPesquisa}>
-                <MascaraCPF/>
+                <MascaraCPF />
                 <button>Buscar CPF</button>
               </div>
               <div className={styles.camposPesquisa}>

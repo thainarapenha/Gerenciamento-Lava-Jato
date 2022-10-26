@@ -5,9 +5,10 @@ import { MascaraCPF } from "../../components/MascaraCPF/MascaraCPF";
 // import { MascaraCEP } from "../../components/MascaraCEP/MascaraCEP";
 import { MascaraPLACA } from "../../components/MascaraPLACA/MascaraPLACA"
 import { MascaraCelular } from "../../components/MascaraCelular/MascaraCelular";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export const CadastroCliente = () => {
+
   const [dados, setDados] = useState({
     cep: "",
     endereco: { localidade: "", uf: "", logradouro: "" },
@@ -15,6 +16,7 @@ export const CadastroCliente = () => {
 
   async function buscaCep(event) {
     console.log(event.target.value);
+
     try {
       const res = await fetch(
         `https://viacep.com.br/ws/${event.target.value}/json/`

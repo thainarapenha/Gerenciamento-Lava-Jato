@@ -50,7 +50,7 @@
 }
 
 .campoFormServico label {
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .campoFormServico input {
@@ -58,6 +58,32 @@
   border-radius: 8px;
   border: 1px solid #6FC2C6;
 }
+
+.formRetorno form span {
+  padding-left: 10px;
+  font-size: 14px;
+}
+
+.areaInfo {
+  width: 90%;
+  margin: 10px 0;
+}
+
+.areaInfo,
+.areaCarro {
+  display: flex;
+  justify-content: space-between;
+  /* border: 1px solid red; */
+}
+.areaCarro {
+  width: 40%;
+  margin-top: 20px;
+}
+
+/* .cx1{
+  margin-right: 20%;
+} */
+
 
 .camposPesquisa,
 .areaCheck {
@@ -70,8 +96,36 @@
 }
 
 .camposPesquisa input,
-.areaCheck label {
+.areaCheck label,
+.Descricao {
   margin-right: 20px;
+}
+
+.Descricao,
+.campoHorario {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+  /* border: 1px solid red; */
+}
+
+.campoHorario {
+  font-size: 14px;
+  margin: 10px 0 20px 20px;
+  /* border: 1px solid red; */
+}
+
+.Descricao label {
+  margin-top: 20px;
+}
+
+.Descricao textarea{
+  margin-top: 10px;
+  width: 100%;
+  height: 70px;
+  border-radius: 8px;
+  border: 1px solid black;
 }
 
 .camposPesquisa button {
@@ -113,3 +167,4 @@
   color: white;
   background: #F06000;
 }
+
